@@ -1,6 +1,6 @@
 # Kukulcan — site officiel
 
-Landing page statique et responsive du jeu **Kukulcan**, conçue pour GitHub Pages.
+Landing page statique et responsive du jeu **Kukulcan**, conçue pour GitHub Pages. Le site est publié à la racine pour fonctionner avec la configuration Pages actuelle et conservé dans `website/` comme source de déploiement dédiée.
 
 ## Aperçu local
 
@@ -15,7 +15,8 @@ Puis ouvrez `http://localhost:4173`.
 
 ## Structure
 
-- `website/index.html` — page d’accueil
+- `index.html` — page d’accueil servie par GitHub Pages
+- `website/index.html` — copie source utilisée par le workflow Pages
 - `website/support.html` — aide et contact
 - `website/privacy.html` — politique de confidentialité
 - `website/styles.css` — design responsive et animations
