@@ -25,6 +25,8 @@ Puis ouvrez `http://localhost:4173`.
 
 ## Déploiement GitHub Pages
 
-GitHub Pages ne permet pas de sélectionner arbitrairement le dossier `/website`. Pour publier ce dossier tel quel, utilisez une action GitHub Pages ou déplacez son contenu dans `/docs` ou à la racine de la branche publiée.
+Le workflow `.github/workflows/pages.yml` publie automatiquement le dossier `website` à chaque changement sur `main`.
+
+Lors du premier déploiement, ouvrez **Settings → Pages** dans GitHub et choisissez **GitHub Actions** comme source. Le workflow peut ensuite être relancé manuellement depuis l’onglet **Actions** si nécessaire.
 
 Les illustrations ont été créées spécialement pour ce site. Elles ne reprennent aucun asset de Supercell.
