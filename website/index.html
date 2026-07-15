@@ -1,91 +1,211 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Kukulcan est une application pensée pour accompagner vos sessions avec une expérience claire, rapide et inspirée."
-    />
-    <title>Kukulcan — Mini-site officiel</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <nav class="nav" aria-label="Navigation principale">
-        <a class="brand" href="index.html" aria-label="Accueil Kukulcan">
-          <span class="brand-mark" aria-hidden="true">K</span>
-          <span>Kukulcan</span>
-        </a>
-        <div class="nav-links">
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="support.html">Support</a>
-        </div>
-      </nav>
-    </header>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#081a14">
+  <meta name="description" content="Kukulcan est un deckbuilding roguelike sur iOS : sacrifiez vos cartes, gagnez la faveur des dieux mayas et rebâtissez votre temple.">
+  <meta property="og:title" content="Kukulcan — Satisfaites les dieux">
+  <meta property="og:description" content="Un jeu de cartes stratégique et roguelike inspiré des mythes mayas, bientôt sur iOS.">
+  <meta property="og:image" content="assets/hero-kukulcan.webp">
+  <meta property="og:type" content="website">
+  <title>Kukulcan — Jeu de cartes roguelike sur iOS</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/hero-kukulcan.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
 
-    <main>
-      <section class="hero">
-        <div class="hero-content">
-          <p class="eyebrow">Mini-site officiel</p>
-          <h1>Une expérience simple, fluide et prête pour l’App Store.</h1>
-          <p class="hero-copy">
-            Kukulcan rassemble l’essentiel dans une interface statique, légère et
-            facile à publier sur GitHub Pages. Ce site fournit les informations
-            publiques nécessaires pour la revue App Store : présentation,
-            politique de confidentialité et support.
-          </p>
-          <div class="actions">
-            <a class="button primary" href="support.html">Obtenir de l’aide</a>
-            <a class="button secondary" href="privacy.html">Lire la confidentialité</a>
-          </div>
+  <header class="site-header" data-header>
+    <a class="brand" href="#accueil" aria-label="Kukulcan — Accueil">
+      <span class="brand-mark" aria-hidden="true">K</span>
+      <span class="brand-name">Kukulcan</span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" data-menu-toggle>
+      <span class="sr-only">Ouvrir le menu</span>
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale" data-nav>
+      <a href="#jeu">Le jeu</a>
+      <a href="#dieux">Les dieux</a>
+      <a href="#temple">Le temple</a>
+      <a href="#actus">Actus</a>
+    </nav>
+
+    <a class="nav-cta" href="#beta">Bientôt sur iOS</a>
+  </header>
+
+  <main id="contenu">
+    <section class="hero" id="accueil" aria-labelledby="hero-title">
+      <div class="hero-backdrop" role="img" aria-label="Kukulcan, serpent à plumes, survole une cité maya au coucher du soleil"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-copy wrap">
+        <p class="eyebrow light">Deckbuilding roguelike · iOS</p>
+        <p class="hero-wordmark" aria-hidden="true">Kukulcan</p>
+        <h1 id="hero-title">Satisfaites<br>les dieux.</h1>
+        <p class="hero-lede">Sacrifiez vos guerriers. Invoquez sept divinités. Rebâtissez un temple capable de défier la fin du monde.</p>
+        <div class="hero-actions">
+          <a class="button button-gold" href="#jeu">Découvrir le jeu</a>
+          <a class="text-link light-link" href="#beta">Suivre l’aventure <span aria-hidden="true">→</span></a>
         </div>
-        <div class="hero-card" aria-label="Aperçu des points forts de Kukulcan">
-          <div class="orb" aria-hidden="true"></div>
-          <h2>Kukulcan</h2>
-          <p>Clair. Rapide. Prêt à publier.</p>
-          <ul>
-            <li>Site statique sans dépendance</li>
-            <li>Pages App Store obligatoires</li>
-            <li>Compatible GitHub Pages</li>
+      </div>
+      <dl class="hero-stats wrap" aria-label="Le jeu en chiffres">
+        <div><dt>7</dt><dd>Dieux à invoquer</dd></div>
+        <div><dt>40+</dt><dd>Cartes à maîtriser</dd></div>
+        <div><dt>∞</dt><dd>Runs à réinventer</dd></div>
+      </dl>
+      <a class="scroll-cue" href="#jeu" aria-label="Faire défiler vers le jeu"><span></span></a>
+    </section>
+
+    <section class="intro section" id="jeu" aria-labelledby="intro-title">
+      <div class="split wrap">
+        <div class="device-stage reveal">
+          <div class="device-glow"></div>
+          <figure class="device-frame">
+            <img src="assets/combat-cartes.webp" alt="Un combat de cartes Kukulcan sur un autel d’obsidienne" width="1536" height="1024" loading="lazy">
+          </figure>
+          <div class="floating-token token-blood" aria-hidden="true">✦</div>
+          <div class="floating-token token-jade" aria-hidden="true">◆</div>
+        </div>
+
+        <div class="section-copy reveal">
+          <p class="eyebrow">Le sacrifice est votre arme</p>
+          <h2 id="intro-title">Chaque carte a deux destins.</h2>
+          <p class="lede">Gardez vos guerriers pour tenir le champ de bataille, ou offrez-les aux dieux pour libérer leur pouvoir. Chaque tour est un dilemme. Chaque offrande vous rapproche d’un ultime dévastateur.</p>
+          <ul class="feature-list">
+            <li><span aria-hidden="true">01</span><strong>Posez</strong> vos communes et construisez vos combos.</li>
+            <li><span aria-hidden="true">02</span><strong>Sacrifiez</strong> au bon moment pour gagner du sang et de la faveur.</li>
+            <li><span aria-hidden="true">03</span><strong>Invoquez</strong> votre dieu et renversez le combat.</li>
           </ul>
+          <a class="button button-dark" href="#piliers">Voir les mécaniques</a>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="section grid-section" aria-labelledby="features-title">
+    <section class="pillars section" id="piliers" aria-labelledby="pillars-title">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Une run. Mille décisions.</p>
+          <h2 id="pillars-title">Entrez dans le cycle.</h2>
+        </div>
+        <div class="pillar-grid">
+          <article class="pillar-card reveal">
+            <span class="pillar-icon icon-blade" aria-hidden="true"></span>
+            <p class="card-number">01</p>
+            <h3>Sacrifiez avec audace</h3>
+            <p>Transformez une perte tactique en sang, effets bonus et montée de Faveur. La meilleure carte n’est pas toujours celle qui survit.</p>
+          </article>
+          <article class="pillar-card reveal">
+            <span class="pillar-icon icon-sun" aria-hidden="true"></span>
+            <p class="card-number">02</p>
+            <h3>Gagnez la Faveur</h3>
+            <p>Accomplissez les vœux de votre dieu. À dix points, déclenchez un ultime spectaculaire qui change le destin du combat.</p>
+          </article>
+          <article class="pillar-card reveal">
+            <span class="pillar-icon icon-path" aria-hidden="true"></span>
+            <p class="card-number">03</p>
+            <h3>Tracez votre route</h3>
+            <p>Combats, élites, cénotes, événements et trésors : choisissez votre chemin à travers trois actes, jusqu’au boss final.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="gods section" id="dieux" aria-labelledby="gods-title">
+      <div class="wrap gods-heading reveal">
         <div>
-          <p class="eyebrow">Pourquoi ce site</p>
-          <h2 id="features-title">Tout ce qu’il faut pour lancer Kukulcan proprement.</h2>
+          <p class="eyebrow light">Sept puissances. Sept styles de jeu.</p>
+          <h2 id="gods-title">Choisissez votre dieu patron.</h2>
         </div>
-        <div class="feature-grid">
-          <article class="feature-card">
-            <h3>Publication facile</h3>
-            <p>
-              Les fichiers HTML et CSS sont autonomes : copiez le dossier
-              <code>website/</code> dans GitHub Pages et publiez.
-            </p>
-          </article>
-          <article class="feature-card">
-            <h3>Conforme aux attentes App Store</h3>
-            <p>
-              La Privacy Policy et la page Support sont accessibles depuis des
-              URLs publiques, comme demandé lors de la soumission.
-            </p>
-          </article>
-          <article class="feature-card">
-            <h3>Base éditoriale prête</h3>
-            <p>
-              Les textes App Store et la checklist TestFlight sont préparés dans
-              le dossier <code>docs/</code> pour finaliser la livraison.
-            </p>
-          </article>
-        </div>
-      </section>
-    </main>
+        <p>Chaque divinité vous confie un vœu, quatre capacités et un ultime unique. Votre deck ne se joue jamais tout à fait de la même façon.</p>
+      </div>
 
-    <footer class="site-footer">
+      <div class="god-rail" aria-label="Les sept dieux de Kukulcan">
+        <article class="god-card god-kukulcan reveal"><span>⌁</span><h3>Kukulcan</h3><p>Vent divin</p></article>
+        <article class="god-card god-ixchel reveal"><span>☾</span><h3>Ix Chel</h3><p>Éclipse</p></article>
+        <article class="god-card god-chaac reveal"><span>ϟ</span><h3>Chaac</h3><p>Déluge</p></article>
+        <article class="god-card god-kinich reveal"><span>☀</span><h3>Kinich Ahau</h3><p>Soleil dévorant</p></article>
+        <article class="god-card god-ahpuch reveal"><span>✣</span><h3>Ah Puch</h3><p>Marche des morts</p></article>
+        <article class="god-card god-itzamna reveal"><span>◈</span><h3>Itzamna</h3><p>Prophétie</p></article>
+        <article class="god-card god-buluc reveal"><span>⚔</span><h3>Buluc Chabtan</h3><p>Guerre totale</p></article>
+      </div>
+    </section>
+
+    <section class="temple" id="temple" aria-labelledby="temple-title">
+      <img src="assets/village-temple.webp" alt="Un village maya prospère construit autour d’un temple et d’un cénote" width="1536" height="1024" loading="lazy">
+      <div class="temple-shade"></div>
+      <div class="temple-copy wrap reveal">
+        <p class="eyebrow light">Votre défaite nourrit demain</p>
+        <h2 id="temple-title">Rebâtissez<br>le Temple.</h2>
+        <p>Chaque run rapporte des éclats de jade. Débloquez de nouveaux dieux, enrichissez le Codex et améliorez votre village. Ici, aucune aventure n’est vraiment perdue.</p>
+        <div class="temple-badges" aria-label="Progression du temple">
+          <span>Autel des dieux</span>
+          <span>Salle des offrandes</span>
+          <span>Bibliothèque des codex</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="news section" id="actus" aria-labelledby="news-title">
+      <div class="wrap">
+        <div class="news-heading reveal">
+          <div>
+            <p class="eyebrow">Journal du développement</p>
+            <h2 id="news-title">Les dernières offrandes.</h2>
+          </div>
+          <a class="text-link" href="https://github.com/Joreach3023/Kukulcan-site" target="_blank" rel="noreferrer">Voir le projet <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="news-grid">
+          <article class="news-card reveal">
+            <div class="news-image"><img src="assets/combat-cartes.webp" alt="Cartes de combat autour d’un autel rituel" width="1536" height="1024" loading="lazy"></div>
+            <div class="news-meta"><span>Mécaniques</span><time datetime="2026-07-07">7 juillet 2026</time></div>
+            <h3>Faveur, vœux et ultimes sont entrés en jeu</h3>
+            <p>Les sept divinités possèdent désormais leur propre manière de transformer un sacrifice en moment décisif.</p>
+          </article>
+          <article class="news-card reveal">
+            <div class="news-image"><img src="assets/village-temple.webp" alt="Village et temple de Kukulcan à l’aube" width="1536" height="1024" loading="lazy"></div>
+            <div class="news-meta"><span>Progression</span><time datetime="2026-07-07">7 juillet 2026</time></div>
+            <h3>Le Temple donne un sens à chaque nouvelle run</h3>
+            <p>Éclats de jade, salles à améliorer et niveaux d’Ascension prolongent désormais l’aventure après le boss final.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="beta" id="beta" aria-labelledby="beta-title">
+      <div class="beta-glyph glyph-left" aria-hidden="true">◆</div>
+      <div class="beta-glyph glyph-right" aria-hidden="true">⌁</div>
+      <div class="wrap beta-copy reveal">
+        <p class="eyebrow light">La prophétie approche</p>
+        <h2 id="beta-title">Votre place au Temple vous attend.</h2>
+        <p>Kukulcan est en développement pour iPhone et iPad. Suivez le projet pour être averti de la prochaine bêta.</p>
+        <a class="button button-cream" href="https://github.com/Joreach3023/Kukulcan-site" target="_blank" rel="noreferrer">Suivre le projet sur GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-top">
+      <a class="brand footer-brand" href="#accueil" aria-label="Kukulcan — Retour en haut">
+        <span class="brand-mark" aria-hidden="true">K</span>
+        <span class="brand-name">Kukulcan</span>
+      </a>
+      <p>Un jeu indépendant de cartes stratégiques inspiré des mythes mayas.</p>
+      <nav aria-label="Liens secondaires">
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Confidentialité</a>
+        <a href="https://github.com/Joreach3023/Kukulcan-site" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+    </div>
+    <div class="wrap footer-bottom">
       <p>© 2026 Kukulcan. Tous droits réservés.</p>
-      <p><a href="privacy.html">Privacy Policy</a> · <a href="support.html">Support</a></p>
-    </footer>
-  </body>
+      <p>Conçu avec du jade, de l’obsidienne et beaucoup de stratégie.</p>
+    </div>
+  </footer>
+</body>
 </html>

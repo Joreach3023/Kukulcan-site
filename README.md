@@ -1,24 +1,30 @@
-# Kukulcan-site
+# Kukulcan — site officiel
 
-Mini-site statique pour l’application Kukulcan, prêt à publier sur GitHub Pages.
+Landing page statique et responsive du jeu **Kukulcan**, conçue pour GitHub Pages.
 
-## Contenu
+## Aperçu local
 
-- `website/index.html` — page d’accueil.
-- `website/privacy.html` — Privacy Policy publique.
-- `website/support.html` — page Support publique.
-- `website/styles.css` — styles du mini-site.
-- `docs/app-store-text.md` — texte préparé pour App Store Connect.
-- `docs/bundle-identifier-xcode.md` — étapes de correction du Bundle Identifier Xcode.
-- `docs/testflight-checklist.md` — checklist complète TestFlight.
+Le site ne demande aucune installation : ouvrez `website/index.html` dans un navigateur ou servez le dossier `website` avec un serveur HTTP statique.
 
-## Publication GitHub Pages
+```powershell
+cd website
+python -m http.server 4173
+```
 
-1. Ouvrir les paramètres du dépôt GitHub.
-2. Aller dans **Pages**.
-3. Choisir la branche de publication.
-4. Choisir le dossier `/website` si disponible, ou copier le contenu de `website/` dans la racine publiée.
-5. Vérifier les URLs publiques :
-   - `https://<votre-utilisateur-github>.github.io/<votre-repo>/`
-   - `https://<votre-utilisateur-github>.github.io/<votre-repo>/privacy.html`
-   - `https://<votre-utilisateur-github>.github.io/<votre-repo>/support.html`
+Puis ouvrez `http://localhost:4173`.
+
+## Structure
+
+- `website/index.html` — page d’accueil
+- `website/support.html` — aide et contact
+- `website/privacy.html` — politique de confidentialité
+- `website/styles.css` — design responsive et animations
+- `website/script.js` — menu mobile et apparitions au défilement
+- `website/assets/` — illustrations web optimisées au format WebP
+- `docs/` — documents existants de préparation App Store et TestFlight
+
+## Déploiement GitHub Pages
+
+GitHub Pages ne permet pas de sélectionner arbitrairement le dossier `/website`. Pour publier ce dossier tel quel, utilisez une action GitHub Pages ou déplacez son contenu dans `/docs` ou à la racine de la branche publiée.
+
+Les illustrations ont été créées spécialement pour ce site. Elles ne reprennent aucun asset de Supercell.
