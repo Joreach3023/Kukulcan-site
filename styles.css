@@ -161,8 +161,9 @@ button, input { font: inherit; }
 .section-copy h2, .section-heading h2, .news-heading h2 { font-size: clamp(52px, 6.1vw, 80px); }
 .section-copy .lede { margin: 27px 0 30px; color: #3c4b45; font-size: 18px; }
 .feature-list { display: grid; gap: 0; margin: 0 0 36px; padding: 0; list-style: none; border-top: 1px solid #ccd7d1; }
-.feature-list li { display: grid; grid-template-columns: 40px auto; gap: 10px; padding: 15px 0; border-bottom: 1px solid #ccd7d1; color: #44534d; }
+.feature-list li { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 10px; padding: 15px 0; border-bottom: 1px solid #ccd7d1; color: #44534d; }
 .feature-list li span { color: var(--coral); font-size: 11px; font-weight: 900; }
+.feature-list li p { margin: 0; }
 .feature-list strong { color: var(--ink); }
 
 .pillars { position: relative; background: #eee9da; overflow: hidden; }
