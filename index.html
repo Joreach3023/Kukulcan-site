@@ -30,6 +30,7 @@
     </button>
 
     <nav class="main-nav" id="main-nav" aria-label="Navigation principale" data-nav>
+      <a href="#bande-annonce">Bande-annonce</a>
       <a href="#jeu">Le jeu</a>
       <a href="#dieux">Les dieux</a>
       <a href="#temple">Le temple</a>
@@ -49,8 +50,8 @@
         <h1 id="hero-title">Satisfaites<br>les dieux.</h1>
         <p class="hero-lede">Sacrifiez vos guerriers. Invoquez sept divinités. Rebâtissez un temple capable de défier la fin du monde.</p>
         <div class="hero-actions">
-          <a class="button button-gold" href="#jeu">Découvrir le jeu</a>
-          <a class="text-link light-link" href="#beta">Suivre l’aventure <span aria-hidden="true">→</span></a>
+          <a class="button button-gold" href="#bande-annonce">Regarder la bande-annonce</a>
+          <a class="text-link light-link" href="#jeu">Découvrir le jeu <span aria-hidden="true">→</span></a>
         </div>
       </div>
       <dl class="hero-stats wrap" aria-label="Le jeu en chiffres">
@@ -59,6 +60,25 @@
         <div><dt>∞</dt><dd>Runs à réinventer</dd></div>
       </dl>
       <a class="scroll-cue" href="#jeu" aria-label="Faire défiler vers le jeu"><span></span></a>
+    </section>
+
+    <section class="trailer section" id="bande-annonce" aria-labelledby="trailer-title">
+      <div class="wrap">
+        <div class="trailer-heading reveal">
+          <div>
+            <p class="eyebrow light">La prophétie s’éveille</p>
+            <h2 id="trailer-title">Regardez la bande-annonce.</h2>
+          </div>
+          <p>Découvrez les premières images de Kukulcan, ses dieux implacables et le cycle de sacrifices qui façonnera chacune de vos parties.</p>
+        </div>
+
+        <div class="trailer-stage reveal">
+          <video class="trailer-player" controls preload="metadata" playsinline poster="website/assets/kukulcan-trailer-poster.webp" aria-label="Bande-annonce de Kukulcan, version anglaise">
+            <source src="website/assets/kukulcan-trailer-en.mp4" type="video/mp4">
+            Votre navigateur ne prend pas en charge la lecture de cette vidéo.
+          </video>
+        </div>
+      </div>
     </section>
 
     <section class="intro section" id="jeu" aria-labelledby="intro-title">
